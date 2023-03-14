@@ -26,4 +26,14 @@ const depthFirstPrintIterative = (graph, startingNode) => {
     }
 }
 
-depthFirstPrintIterative(graph, 'a')
+// depthFirstPrintIterative(graph, 'a')
+
+const depthFirstPrintRecursively = (graph, startingNode) => {
+    console.log(startingNode)
+
+    console.log(graph[startingNode])
+
+    graph[startingNode].forEach(neighbor => depthFirstPrintRecursively(graph, neighbor))
+}
+
+depthFirstPrintRecursively(graph, 'a') // abdfce
